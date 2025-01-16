@@ -23,7 +23,6 @@
   - **PATCH:** อัปเดตข้อมูลบางส่วน (Partial Update)
   - **DELETE:** ลบข้อมูล (Delete)
 
----
 
 ## **2. URL Design**
 
@@ -63,8 +62,6 @@
   ```plaintext
   /users/{user_id}/orders
   ```
-
----
 
 ## **3. Request and Response**
 
@@ -114,8 +111,6 @@
 }
 ```
 
----
-
 ## **4. HTTP Status Codes**
 
 ### **4.1 Success**
@@ -140,7 +135,6 @@
 | 500      | Internal Server Error    |
 | 503      | Service Unavailable      |
 
----
 
 ## **5. Error Handling**
 
@@ -168,8 +162,6 @@
 -----------------------------------------------------------------------------
 **Internal Error Codes** คือรหัสที่ใช้ระบุข้อผิดพลาดหรือสถานะที่เกิดขึ้นภายในระบบ โดยเฉพาะสำหรับการสื่อสารกับผู้พัฒนาหรือลูกค้า เพื่อช่วยให้เข้าใจสาเหตุและการแก้ไขข้อผิดพลาดได้ง่ายขึ้น
 
----
-
 ### **แนวทางการออกแบบ Internal Error Codes**
 
 1. **โครงสร้างที่ชัดเจน:**
@@ -185,8 +177,6 @@
 
 3. **คำอธิบายที่สื่อความหมาย:**
    - ใช้คำอธิบายที่ระบุปัญหาอย่างชัดเจน เช่น `Resource not found` หรือ `Invalid input format`
-
----
 
 ### **ตัวอย่าง Internal Error Codes**
 
@@ -222,7 +212,6 @@
 | 5000     | Server        | Internal server error.                               |
 | 5001     | Server        | Database connection failure.                         |
 
----
 
 ### **ตัวอย่าง Response เมื่อเกิดข้อผิดพลาด**
 
@@ -258,7 +247,6 @@
 }
 ```
 
----
 
 ### **Best Practices สำหรับ Internal Error Codes**
 1. **Consistency:** ใช้รูปแบบรหัสข้อผิดพลาดที่เป็นมาตรฐานและสม่ำเสมอในทุกระบบ
@@ -269,7 +257,6 @@
      - `404 Not Found` → `3000 Resource not found`
      - `400 Bad Request` → `1001 Validation Error`
 
----
 
 ### **ตัวอย่างเอกสารสำหรับทีมพัฒนา**
 
@@ -280,7 +267,6 @@
 | 3000           | 404 Not Found  | Resource not found.                   | Ensure the resource ID is correct.|
 | 5001           | 500 Internal Server Error| Database connection failure.    | Check database connectivity.     |
 
----
 
 การใช้ **Internal Error Codes** อย่างถูกต้องช่วยลดความซับซ้อนในการ Debug และทำให้ระบบมีมาตรฐานที่ชัดเจน ซึ่งสำคัญมากสำหรับทีมพัฒนา หากต้องการตัวอย่างเพิ่มเติม แจ้งมาได้เลยครับ!
 --------------------------------------------------------------------------------
@@ -300,7 +286,6 @@ X-API-Deprecated: true
 X-API-Deprecation-Date: 2025-12-31
 ```
 
----
 
 ## **7. Documentation Standards**
 
@@ -313,7 +298,6 @@ X-API-Deprecation-Date: 2025-12-31
 - ระบุ Status Codes ที่เกี่ยวข้อง
 - ตัวอย่าง Request และ Response พร้อมตัวอย่างข้อผิดพลาด
 
----
 
 ## **8. Security**
 
@@ -334,7 +318,6 @@ X-API-Deprecation-Date: 2025-12-31
   X-RateLimit-Reset: 2025-01-16T13:00:00Z
   ```
 
----
 
 ## **ตัวอย่างมาตรฐานการออกแบบ**
 
@@ -382,7 +365,3 @@ X-API-Deprecation-Date: 2025-12-31
   }
 }
 ```
-
----
-
-หากคุณต้องการปรับแต่งเพิ่มเติมหรือเพิ่มตัวอย่างในส่วนใด แจ้งมาได้เลยครับ!
